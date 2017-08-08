@@ -89,26 +89,57 @@ $ cat .git/config
   ```
   $ git config --local --list
   ```
-
 ---
-
-# Atom setup
-
-* https://stackoverflow.com/questions/24741996/how-to-upgrade-atom-editor-on-linux
+# Atom (https://atom.io/) setup
+* http://flight-manual.atom.io/getting-started/sections/installing-atom/
   ```
-  $ sudo add-apt-repository ppa:webupd8team/atom
-  $ sudo apt update
-  $ sudo apt install atom
+  $ sudo dpkg -i atom-amd64.deb
+  $ sudo apt -f install
   $ apm install \
   git-plus \
-  markdown-preview-plus \
   split-diff
-  ```
-* If add-apt-repository fails to: `gpg: failed to start the dirmngr '/usr/bin/dirmngr': No such file or directory`, then install:
-  ```
-  $ sudo apt install dirmngr
   ```
 * Check:
   ```
   $ cat ~/.atom/config.cson
+  "*":
+    core:
+      automaticallyUpdate: false
+      disabledPackages: [
+        "welcome"
+      ]
+      telemetryConsent: "no"
+      themes: [
+        "atom-dark-ui"
+        "base16-tomorrow-dark-theme"
+      ]
+    editor:
+      fontSize: 12
+      showInvisibles: true
+    "exception-reporting":
+      userId: "********"
+    "git-plus":
+      experimental:
+        useSplitDiff: true
+    "markdown-preview":
+      useGitHubStyle: true
+    whitespace:
+      ignoreWhitespaceOnCurrentLine: false
+  ```
+---
+# Node.js
+* https://nodejs.org/en/download/package-manager/
+  ```
+  $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  $ sudo apt install nodejs
+  ```
+---
+# Google Chrome
+* http://forums.debian.net/viewtopic.php?f=10&t=131432
+  ```
+  $ sudo nano /etc/apt/sources.list.d/google-chrome.list
+  deb http://dl.google.com/linux/chrome/deb/ stable main
+  $ wget https://dl-ssl.google.com/linux/linux_signing_key.pub
+  $ sudo apt-key add linux_signing_key.pub
+  $ sudo apt install google-chrome-stable
   ```

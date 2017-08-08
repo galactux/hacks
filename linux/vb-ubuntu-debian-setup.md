@@ -1,8 +1,10 @@
 # Set up Ubuntu and Debian Desktop on Oracle VirtualBox
 
 ### Prerequisites: VirtualBox installed
-* https://www.virtualbox.org/wiki/Downloads
-* Remember Oracle VM VirtualBox Extension Pack
+* https://wiki.debian.org/VirtualBox
+* Oracle VM VirtualBox Extension Pack
+  * https://www.virtualbox.org/wiki/Downloads
+  * File -> Preferences... -> Extensions
 
 ## Ubuntu
 
@@ -47,8 +49,8 @@ $ echo Hidden=true >> ~/.local/share/applications/ubuntu-amazon-default.desktop
 ## Debian
 
 ### Download, create VM and install Debian
-* http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/9.0.0+nonfree/amd64/iso-cd/
-* sha512sum firmware-9.0.0-amd64-netinst.iso: `d324287da8dff0e42ca4174b4d9d623dc8d82af90c03dc444a5c81718e580cedb5fb55e778bb2b29b6a173154903812a5e44890473144dc4363115bfd9f6aeea`
+* http://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/9.1.0+nonfree/amd64/iso-dvd/
+* sha512sum firmware-9.1.0-amd64-DVD-1.iso: `5e41c56d336a1feea1ca940b2e7692732f753d5b4b05fd27b3a08131182ce493f201dd511a04a2f9d17b6b316c3bd462695a2c84bd30838fed0e75357c27dea7`
 * See Ubuntu instructions
 
 ## Set up Debian
@@ -61,9 +63,9 @@ $ su -l root
   * https://virtualboxes.org/doc/installing-guest-additions-on-debian/
 ```
 $ sudo su
-# apt-get update
-# apt-get upgrade
-# apt-get install build-essential module-assistant
+# apt update
+# apt upgrade
+# apt install build-essential module-assistant
 # m-a prepare
 # mount /media/cdrom
 # sh /media/cdrom/VBoxLinuxAdditions.run
