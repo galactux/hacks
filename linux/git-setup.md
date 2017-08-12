@@ -7,6 +7,11 @@ $ git config --global user.email "<email>"
 $ git config --global core.autocrlf input
 $ git config --global core.editor "atom --wait"
 $ git config --global push.default simple
+$ git config --global diff.tool bc
+$ git config --global difftool.prompt false
+$ git config --global difftool.bc trustExitCode true
+$ git config --global merge.tool bc
+$ git config --global mergetool.bc trustExitCode true
 ```
 * On Windows: `$ git config --global core.autocrlf true`
 * Check (`~/.gitconfig`):
@@ -88,6 +93,14 @@ $ cat .git/config
 * Check:
   ```
   $ git config --local --list
+  ```
+
+### Using Beyond Compare
+* http://www.chadly.net/2014/05/configuring-beyond-compare-with-git/
+  ```
+  $ git difftool path/to/file
+  $ git difftool --dir-diff
+  $ git mergetool
   ```
 ---
 # Atom (https://atom.io/) setup
