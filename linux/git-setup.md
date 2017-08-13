@@ -2,7 +2,7 @@
 
 ### Update global Git configuration file
 ```
-$ git config --global user.name "<accountname>"
+$ git config --global user.name "<username>"
 $ git config --global user.email "<email>"
 $ git config --global core.autocrlf input
 $ git config --global core.editor "atom --wait"
@@ -116,8 +116,9 @@ $ cat .git/config
   ```
   $ cat ~/.atom/config.cson
   "*":
+    autosave:
+      enabled: true
     core:
-      automaticallyUpdate: false
       disabledPackages: [
         "welcome"
       ]
@@ -127,6 +128,7 @@ $ cat .git/config
         "base16-tomorrow-dark-theme"
       ]
     editor:
+      autoIndentOnPaste: false
       fontSize: 12
       showInvisibles: true
     "exception-reporting":
@@ -136,23 +138,8 @@ $ cat .git/config
         useSplitDiff: true
     "markdown-preview":
       useGitHubStyle: true
+    "split-diff":
+      syncHorizontalScroll: true
     whitespace:
       ignoreWhitespaceOnCurrentLine: false
-  ```
----
-# Node.js
-* https://nodejs.org/en/download/package-manager/
-  ```
-  $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-  $ sudo apt install nodejs
-  ```
----
-# Google Chrome
-* http://forums.debian.net/viewtopic.php?f=10&t=131432
-  ```
-  $ sudo nano /etc/apt/sources.list.d/google-chrome.list
-  deb http://dl.google.com/linux/chrome/deb/ stable main
-  $ wget https://dl-ssl.google.com/linux/linux_signing_key.pub
-  $ sudo apt-key add linux_signing_key.pub
-  $ sudo apt install google-chrome-stable
   ```

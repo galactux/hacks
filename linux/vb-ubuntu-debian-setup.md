@@ -27,6 +27,9 @@
   * Processor: 2
 * Settings/Storage
   * Controller: IDE Secondary Master: ubuntu-17.04-desktop-amd64.iso
+* Settings/Network
+  * Attached to: Bridged Adapter
+  * Advanced -> Promiscuous Mode: Allow VMs
 
 ### Install Ubuntu
 * Install -> Restart -> Install Guest Additions -> Shut down
