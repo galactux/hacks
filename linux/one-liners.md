@@ -38,6 +38,22 @@
 
 # Install/uninstall SW on Debian 9
 
+### AWS Command Line Interface (CLI)
+* http://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux.html
+  ```
+  $ sudo apt install python-pip
+  $ pip install awscli --upgrade --user
+  $ nano ~/.profile
+
+  # set PATH so it includes user's private .local/bin if it exists
+  if [ -d "$HOME/.local/bin" ] ; then
+      PATH="$HOME/.local/bin:$PATH"
+  fi
+
+  $ source ~/.profile
+  $ aws --version
+  ```
+
 ### Beyond Compare
 * https://www.scootersoftware.com/download.php?zz=kb_linux_install
   ```
