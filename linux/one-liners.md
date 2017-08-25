@@ -43,15 +43,22 @@
   ```
   $ sudo apt install python-pip
   $ pip install awscli --upgrade --user
-  $ nano ~/.profile
+  $ cat >> ~/.profile
 
   # set PATH so it includes user's private .local/bin if it exists
   if [ -d "$HOME/.local/bin" ] ; then
       PATH="$HOME/.local/bin:$PATH"
   fi
+  <CTRL-D>
+  $ cat >> ~/.bashrc
 
+  # AWS command completion
+  if [ -f "$HOME/.local/bin/aws_completer" ] ; then
+      complete -C "$HOME/.local/bin/aws_completer" aws
+  fi
+  <CTRL-D>
   $ source ~/.profile
-  $ aws --version
+  $ source ~/.bashrc
   ```
 
 ### Beyond Compare
