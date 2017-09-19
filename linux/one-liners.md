@@ -20,6 +20,11 @@
   * `tar -zcvf archive.tar.gz source-directory`
   * `tar -zxvf archive.tar.gz -C target-directory`
   * http://www.zyxware.com/articles/2009/02/26/how-to-create-and-extract-a-tar-gz-archive-using-command-line
+* Restart VirtualBox shared clipboard that stopped working
+  * ```$ kill `ps -fe | awk '/\/usr\/bin\/VBoxClient --clipboard/{print $2}'` ```
+  * With Perl: ```$ kill `ps -fe | perl -ne 'print "$1\n" if /^\S+\s+(\d+).+vboxclient --clipboar[d]/i'` ```
+  * `$ /usr/bin/VBoxClient --clipboard`
+  * https://forums.virtualbox.org/viewtopic.php?f=6&t=48923
 
 ---
 
