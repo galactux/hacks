@@ -2,8 +2,6 @@
 
 ### Update global Git configuration file
 ```
-$ git config --global user.name "<username>"
-$ git config --global user.email "<email>"
 $ git config --global core.autocrlf input
 $ git config --global core.editor "atom --wait"
 $ git config --global push.default simple
@@ -109,18 +107,18 @@ $ cat .git/config
   $ sudo dpkg -i atom-amd64.deb
   $ sudo apt -f install
   $ apm install \
+  editorconfig \
   git-plus \
-  split-diff
+  prettier-atom
   ```
-* Check:
+* Configuration:
   ```
   $ cat ~/.atom/config.cson
   "*":
-    autosave:
-      enabled: true
     core:
       disabledPackages: [
         "welcome"
+        "whitespace"
       ]
       telemetryConsent: "no"
       themes: [
@@ -133,13 +131,12 @@ $ cat .git/config
       showInvisibles: true
     "exception-reporting":
       userId: "********"
-    "git-plus":
-      experimental:
-        useSplitDiff: true
     "markdown-preview":
       useGitHubStyle: true
-    "split-diff":
-      syncHorizontalScroll: true
-    whitespace:
-      ignoreWhitespaceOnCurrentLine: false
-  ```
+    "prettier-atom":
+      formatOnSaveOptions:
+        enabled: true
+        showInStatusBar: true
+    welcome:
+      showOnStartup: false
+    ```
